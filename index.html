@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brady Huckins — Full Stack Developer</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
@@ -37,7 +39,7 @@
     <div class="hero-content">
       <p class="hero-label">Full Stack Developer</p>
       <h1 class="hero-name">Brady<br/>Huckins</h1>
-      <p class="hero-sub">I build fast, scalable web applications from pixel-perfect frontends to robust backend systems.</p>
+      <p class="hero-sub">I build fast, scalable web applications — from pixel-perfect frontends to robust backend systems.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-secondary">Get In Touch</a>
@@ -63,14 +65,14 @@
       <div class="about-grid">
         <div class="about-text">
           <p>I'm a full stack developer with a passion for building clean, efficient web applications that solve real problems. I work closely with clients to understand their goals and deliver solutions that are both technically sound and easy to maintain.</p>
-          <p>Whether you need a new product built from scratch, an existing codebase improved, or a complex integration handled I get it done.</p>
+          <p>Whether you need a new product built from scratch, an existing codebase improved, or a complex integration handled — I get it done.</p>
           <div class="about-stats">
             <div class="stat">
               <span class="stat-num">5+</span>
               <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat">
-              <span class="stat-num">15+</span>
+              <span class="stat-num">30+</span>
               <span class="stat-label">Projects Delivered</span>
             </div>
             <div class="stat">
@@ -95,33 +97,78 @@
 
         <div class="project-card" data-index="01">
           <div class="project-tag">E-Commerce</div>
-          <h3 class="project-name">Arc</h3>
+          <h3 class="project-name">ShopFlow</h3>
           <p class="project-desc">A full-featured e-commerce platform with real-time inventory management, Stripe payments, and an admin dashboard.</p>
+          <div class="project-tech">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span>
+          </div>
           <div class="project-links">
-            <a href="E-Commerce/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn">Live Site ↗</a>
             <a href="#" class="link-btn ghost">GitHub ↗</a>
           </div>
         </div>
 
         <div class="project-card" data-index="02">
-          <div class="project-tag">Inventory or Booking Management App</div>
-          <h3 class="project-name">BizManager</h3>
-          <p class="project-desc">A simple CRUD web app where a business can add, edit, and delete items or appointments.</p>
+          <div class="project-tag">SaaS</div>
+          <h3 class="project-name">TaskBridge</h3>
+          <p class="project-desc">A project management SaaS app featuring real-time collaboration, role-based access, and third-party API integrations.</p>
+          <div class="project-tech">
+            <span>Next.js</span><span>TypeScript</span><span>MongoDB</span><span>Socket.io</span>
+          </div>
           <div class="project-links">
-            <a href="BizManager/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn">Live Site ↗</a>
             <a href="#" class="link-btn ghost">GitHub ↗</a>
           </div>
         </div>
 
         <div class="project-card" data-index="03">
-          <div class="project-tag">Restraunt Landing Page</div>
-          <h3 class="project-name">MaisonDorée</h3>
-          <p class="project-desc">A fast, mobile-responsive landing page for a fictional Restraunt.</p>
+          <div class="project-tag">Web App</div>
+          <h3 class="project-name">DataPulse</h3>
+          <p class="project-desc">An analytics dashboard that aggregates data from multiple sources and renders live charts with filtering and export tools.</p>
           <div class="project-tech">
             <span>Vue.js</span><span>Python</span><span>FastAPI</span><span>Redis</span>
           </div>
           <div class="project-links">
-            <a href="MaisonDorée/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="04">
+          <div class="project-tag">API</div>
+          <h3 class="project-name">AuthKit</h3>
+          <p class="project-desc">A drop-in authentication microservice with JWT, OAuth2, multi-factor auth, and rate limiting out of the box.</p>
+          <div class="project-tech">
+            <span>Node.js</span><span>Express</span><span>MySQL</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="05">
+          <div class="project-tag">Mobile Web</div>
+          <h3 class="project-name">TrailLog</h3>
+          <p class="project-desc">A mobile-first PWA for hikers to log routes, track elevation, and share trip reports with an offline-first architecture.</p>
+          <div class="project-tech">
+            <span>React</span><span>IndexedDB</span><span>Mapbox</span><span>PWA</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="06">
+          <div class="project-tag">CMS</div>
+          <h3 class="project-name">ContentHub</h3>
+          <p class="project-desc">A headless CMS with a custom block editor, media pipeline, multi-language support, and a GraphQL content API.</p>
+          <div class="project-tech">
+            <span>Next.js</span><span>GraphQL</span><span>AWS S3</span><span>Prisma</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="link-btn">Live Site ↗</a>
             <a href="#" class="link-btn ghost">GitHub ↗</a>
           </div>
         </div>
