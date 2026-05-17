@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brady Huckins — Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">BH</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-label">Full Stack Developer</p>
+      <h1 class="hero-name">Brady<br/>Huckins</h1>
+      <p class="hero-sub">I build fast, scalable web applications from pixel-perfect frontends to robust backend systems.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-graphic">
+      <div class="code-block">
+        <div class="code-line"><span class="kw">const</span> dev <span class="op">=</span> {</div>
+        <div class="code-line indent"><span class="str">name</span>: <span class="val">"Brady Huckins"</span>,</div>
+        <div class="code-line indent"><span class="str">role</span>: <span class="val">"Full Stack Developer"</span>,</div>
+        <div class="code-line indent"><span class="str">stack</span>: [<span class="val">"React"</span>, <span class="val">"Node"</span>, <span class="val">"SQL"</span>],</div>
+        <div class="code-line indent"><span class="str">available</span>: <span class="bool">true</span></div>
+        <div class="code-line">};</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <p class="section-label">// about</p>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a full stack developer with a passion for building clean, efficient web applications that solve real problems. I work closely with clients to understand their goals and deliver solutions that are both technically sound and easy to maintain.</p>
+          <p>Whether you need a new product built from scratch, an existing codebase improved, or a complex integration handled I get it done.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-wrap">
+          <img src="Me.png" alt="Brady Huckins" style="width:100%; border-radius:4px; object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">// projects</p>
+      <h2 class="section-title">Past Work</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-index="01">
+          <div class="project-tag">E-Commerce</div>
+          <h3 class="project-name">Arc</h3>
+          <p class="project-desc">A full-featured e-commerce platform with real-time inventory management, Stripe payments, and an admin dashboard.</p>
+          <div class="project-links">
+            <a href="E-Commerce/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="02">
+          <div class="project-tag">Inventory or Booking Management App</div>
+          <h3 class="project-name">BizManager</h3>
+          <p class="project-desc">A simple CRUD web app where a business can add, edit, and delete items or appointments.</p>
+          <div class="project-links">
+            <a href="BizManager/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="03">
+          <div class="project-tag">Restraunt Landing Page</div>
+          <h3 class="project-name">MaisonDorée</h3>
+          <p class="project-desc">A fast, mobile-responsive landing page for a fictional Restraunt.</p>
+          <div class="project-tech">
+            <span>Vue.js</span><span>Python</span><span>FastAPI</span><span>Redis</span>
+          </div>
+          <div class="project-links">
+            <a href="MaisonDorée/index.html" class="link-btn">Live Site ↗</a>
+            <a href="#" class="link-btn ghost">GitHub ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label">// skills</p>
+      <h2 class="section-title">What I Work With</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React / Next.js</li>
+            <li>Vue.js</li>
+            <li>TypeScript</li>
+            <li>HTML &amp; CSS</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <ul>
+            <li>Node.js / Express</li>
+            <li>Python / FastAPI</li>
+            <li>REST &amp; GraphQL APIs</li>
+            <li>Authentication / OAuth</li>
+            <li>Microservices</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Database</h4>
+          <ul>
+            <li>PostgreSQL / MySQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <li>Prisma ORM</li>
+            <li>Database Design</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>DevOps &amp; Tools</h4>
+          <ul>
+            <li>Docker / Kubernetes</li>
+            <li>AWS / GCP</li>
+            <li>CI/CD Pipelines</li>
+            <li>Git / GitHub</li>
+            <li>Linux / Bash</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <p class="section-label">// contact</p>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="contact-sub">Have a project in mind? Send me a message and I'll get back to you within 24 hours.</p>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Project type or topic" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+        <p class="form-success" id="formSuccess">Message sent! I'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Brady Huckins</span>
+      <div class="footer-links">
+        <a href="https://github.com/BradyHuckins" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <span class="footer-copy">&copy; 2025 Brady Huckins. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
