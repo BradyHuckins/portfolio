@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Dorée — Fine Dining</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="nav-logo">Maison Dorée</div>
+      <div class="nav-right">
+        <a href="#pricing">Private Dining</a>
+        <a href="#contact" class="nav-reserve">Reserve a Table</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#menu" class="mob-link">Menu</a></li>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#pricing" class="mob-link">Private Dining</a></li>
+      <li><a href="#contact" class="mob-link">Reserve a Table</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <img class="hero-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80" alt="Fine dining table setting" />
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 2018 &mdash; New York City</p>
+      <h1 class="hero-title">An Evening<br/><em>Worth Remembering</em></h1>
+      <p class="hero-sub">Contemporary French cuisine, crafted with intention.<br/>Reservations recommended.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">Reserve a Table</a>
+        <a href="#menu" class="btn-ghost">View Menu</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span></span>
+      <p>Scroll</p>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <div class="strip-item"><span class="strip-icon">✦</span> Open Tuesday – Sunday</div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-icon">✦</span> Dinner from 5:30 PM</div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-icon">✦</span> Private Events Available</div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-icon">✦</span> 3 Michelin Stars</div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-image-col">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Chef at work" class="about-img-main" />
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=400&q=80" alt="Restaurant interior" class="about-img-accent" />
+      </div>
+      <div class="about-text-col">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Where Craft Meets <em>Elegance</em></h2>
+        <p class="body-text">Maison Dorée was born from a singular obsession: to serve food that moves people. Chef Laurent Mercier trained in Lyon and Paris before bringing his vision to New York — a menu rooted in classical technique, elevated by seasonal ingredients and quiet innovation.</p>
+        <p class="body-text">Every dish is a conversation between tradition and the present moment. We source from farms within 100 miles, pour only from small producers, and set every table as if it were the only one in the room.</p>
+        <div class="about-awards">
+          <div class="award"><span class="award-num">3</span><span class="award-label">Michelin Stars</span></div>
+          <div class="award"><span class="award-num">#4</span><span class="award-label">World's Best 2024</span></div>
+          <div class="award"><span class="award-num">6</span><span class="award-label">Years Running</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="section-inner">
+      <p class="section-label centered">The Menu</p>
+      <h2 class="section-title centered">Seasonal Offerings</h2>
+      <p class="section-sub centered">Our menu changes with the seasons. Below is a selection from our current tasting menu.</p>
+
+      <div class="menu-tabs">
+        <button class="tab active" data-tab="starters">Starters</button>
+        <button class="tab" data-tab="mains">Mains</button>
+        <button class="tab" data-tab="desserts">Desserts</button>
+      </div>
+
+      <div class="menu-panel active" id="starters">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Oysters & Pearl</h4>
+            <p>Kumamoto oyster, champagne mignonette, ossetra caviar</p>
+          </div>
+          <span class="menu-price">$32</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Foie Gras Torchon</h4>
+            <p>Brioche, sauternes gelée, pickled grapes, hazelnuts</p>
+          </div>
+          <span class="menu-price">$44</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Heirloom Tomato</h4>
+            <p>Burrata, aged balsamic, micro basil, fleur de sel</p>
+          </div>
+          <span class="menu-price">$24</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Lobster Bisque</h4>
+            <p>Maine lobster, cognac cream, tarragon, sourdough crouton</p>
+          </div>
+          <span class="menu-price">$28</span>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="mains">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Dry-Aged Duck</h4>
+            <p>Magret breast, cherry jus, celeriac purée, wild mushrooms</p>
+          </div>
+          <span class="menu-price">$68</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Côte de Boeuf</h4>
+            <p>Prime rib, bone marrow butter, pommes sarladaises, truffle jus</p>
+          </div>
+          <span class="menu-price">$98</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Halibut en Croûte</h4>
+            <p>Pacific halibut, saffron beurre blanc, fennel, sea vegetables</p>
+          </div>
+          <span class="menu-price">$72</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Black Truffle Risotto</h4>
+            <p>Carnaroli rice, périgord truffle, aged parmesan, chives</p>
+          </div>
+          <span class="menu-price">$58</span>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="desserts">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Tarte Tatin</h4>
+            <p>Caramelised apple, crème fraîche, calvados caramel</p>
+          </div>
+          <span class="menu-price">$18</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Chocolate Fondant</h4>
+            <p>Valrhona dark chocolate, vanilla bean ice cream, gold leaf</p>
+          </div>
+          <span class="menu-price">$22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Crème Brûlée</h4>
+            <p>Madagascar vanilla, caramelised sugar, seasonal berries</p>
+          </div>
+          <span class="menu-price">$16</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Cheese Selection</h4>
+            <p>Five French cheeses, honeycomb, walnut bread, quince</p>
+          </div>
+          <span class="menu-price">$28</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE DINING / PRICING -->
+  <section id="pricing">
+    <div class="section-inner">
+      <p class="section-label centered">Private Dining</p>
+      <h2 class="section-title centered">Host Your Event <em>With Us</em></h2>
+      <p class="section-sub centered">From intimate dinners to corporate gatherings, our private dining rooms are available for exclusive events.</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <p class="pricing-tier">The Salon</p>
+          <p class="pricing-capacity">Up to 12 guests</p>
+          <p class="pricing-price">$2,400<span>/evening</span></p>
+          <ul class="pricing-features">
+            <li>✦ Private room, full buyout</li>
+            <li>✦ Custom 4-course menu</li>
+            <li>✦ Dedicated sommelier</li>
+            <li>✦ Floral arrangement included</li>
+            <li>✦ AV equipment available</li>
+          </ul>
+          <a href="#contact" class="btn-gold">Enquire</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <p class="pricing-badge">Most Popular</p>
+          <p class="pricing-tier">The Grand Room</p>
+          <p class="pricing-capacity">Up to 40 guests</p>
+          <p class="pricing-price">$7,800<span>/evening</span></p>
+          <ul class="pricing-features">
+            <li>✦ Full floor buyout</li>
+            <li>✦ Custom 6-course tasting menu</li>
+            <li>✦ Wine pairing included</li>
+            <li>✦ Event coordinator assigned</li>
+            <li>✦ Full AV & lighting setup</li>
+          </ul>
+          <a href="#contact" class="btn-gold">Enquire</a>
+        </div>
+
+        <div class="pricing-card">
+          <p class="pricing-tier">Full Buyout</p>
+          <p class="pricing-capacity">Up to 120 guests</p>
+          <p class="pricing-price">Custom<span> pricing</span></p>
+          <ul class="pricing-features">
+            <li>✦ Entire restaurant exclusive</li>
+            <li>✦ Bespoke menu creation</li>
+            <li>✦ Full sommelier team</li>
+            <li>✦ Live music arrangements</li>
+            <li>✦ White-glove coordination</li>
+          </ul>
+          <a href="#contact" class="btn-gold">Enquire</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <div class="gallery-strip">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Dish" /></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=600&q=80" alt="Dish" /></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Dish" /></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Dish" /></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Dish" /></div>
+  </div>
+
+  <!-- CONTACT & MAP -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-form-col">
+        <p class="section-label">Reservations</p>
+        <h2 class="section-title">Reserve Your Table</h2>
+        <p class="body-text">For parties of 6 or more, please contact us directly. We'll do our best to accommodate your preferred date and time.</p>
+        <form class="res-form" id="resForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date</label>
+              <input type="date" required />
+            </div>
+            <div class="form-group">
+              <label>Guests</label>
+              <select>
+                <option>1 guest</option>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5 guests</option>
+                <option>6+ guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Special Requests</label>
+            <textarea rows="4" placeholder="Dietary requirements, occasion, seating preference..."></textarea>
+          </div>
+          <button type="submit" class="btn-gold full">Request Reservation</button>
+          <p class="form-note" id="resSuccess">Thank you. We'll confirm your reservation within 2 hours.</p>
+        </form>
+      </div>
+      <div class="contact-info-col">
+        <div class="info-block">
+          <h4>Location</h4>
+          <p>14 West 55th Street<br/>New York, NY 10019</p>
+        </div>
+        <div class="info-block">
+          <h4>Hours</h4>
+          <p>Tuesday – Thursday: 5:30 PM – 10:00 PM<br/>Friday – Saturday: 5:00 PM – 11:00 PM<br/>Sunday: 5:00 PM – 9:30 PM<br/><em>Closed Mondays</em></p>
+        </div>
+        <div class="info-block">
+          <h4>Contact</h4>
+          <p>+1 (212) 555-0192<br/>hello@maisondoree.com</p>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9776!3d40.7614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9de60bfe7%3A0x8db90cb5d8eb62e7!2sW%2055th%20St%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Restaurant location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Maison Dorée</div>
+      <p class="footer-tagline"><em>Contemporary French Cuisine — New York City</em></p>
+      <div class="footer-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Private Dining</a>
+        <a href="#contact">Reservations</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Maison Dorée. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

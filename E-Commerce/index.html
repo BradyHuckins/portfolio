@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARC — Premium Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="showPage('shop')">ARC</a>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('shop')" class="nav-link">Shop</a>
+        <a href="#" onclick="showPage('shop')" class="nav-link">Collections</a>
+        <a href="#" onclick="showPage('shop')" class="nav-link">About</a>
+      </div>
+      <div class="nav-right">
+        <div class="search-btn" onclick="toggleSearch()" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <button class="cart-btn" onclick="showPage('cart')" aria-label="Open cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search products..." id="searchInput" oninput="handleSearch()" />
+      <button onclick="toggleSearch()">✕</button>
+    </div>
+  </nav>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Added to cart</span>
+  </div>
+
+  <!-- ===================== -->
+  <!-- PAGE: SHOP            -->
+  <!-- ===================== -->
+  <div class="page active" id="page-shop">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">New Collection — SS25</p>
+        <h1 class="hero-title">Designed for<br/><em>those who notice.</em></h1>
+        <p class="hero-sub">Minimal objects. Maximum intention. Free shipping on orders over $75.</p>
+        <a href="#products" class="btn-dark">Shop Now</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Featured product" />
+          <div class="hero-card-label">
+            <span>Bestseller</span>
+            <strong>Arc Watch — $249</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY FILTERS -->
+    <div class="filter-bar" id="products">
+      <div class="filter-inner">
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" data-cat="All">All</button>
+          <button class="chip" data-cat="Watches">Watches</button>
+          <button class="chip" data-cat="Bags">Bags</button>
+          <button class="chip" data-cat="Accessories">Accessories</button>
+          <button class="chip" data-cat="Tech">Tech</button>
+        </div>
+        <div class="sort-wrap">
+          <select id="sortSelect" onchange="renderProducts()">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <section class="products-section">
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="no-results" id="noResults" style="display:none">
+        <p>No products found.</p>
+        <button class="btn-outline" onclick="clearSearch()">Clear Search</button>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="promo-banner">
+      <div class="promo-inner">
+        <div class="promo-text">
+          <h2>Free shipping on orders over $75</h2>
+          <p>Plus free returns within 30 days. No questions asked.</p>
+        </div>
+        <div class="promo-perks">
+          <div class="perk">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Free Shipping $75+</span>
+          </div>
+          <div class="perk">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            <span>30-Day Returns</span>
+          </div>
+          <div class="perk">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Secure Checkout</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===================== -->
+  <!-- PAGE: PRODUCT DETAIL  -->
+  <!-- ===================== -->
+  <div class="page" id="page-product">
+    <div class="product-detail" id="productDetail"></div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- PAGE: CART            -->
+  <!-- ===================== -->
+  <div class="page" id="page-cart">
+    <div class="cart-page">
+      <div class="cart-header">
+        <button class="back-btn" onclick="showPage('shop')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Continue Shopping
+        </button>
+        <h1 class="cart-title">Your Cart</h1>
+      </div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary" id="cartSummary"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- PAGE: CHECKOUT        -->
+  <!-- ===================== -->
+  <div class="page" id="page-checkout">
+    <div class="checkout-page">
+      <div class="checkout-header">
+        <button class="back-btn" onclick="showPage('cart')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Cart
+        </button>
+        <div class="checkout-logo">ARC</div>
+      </div>
+      <div class="checkout-layout">
+        <div class="checkout-form-col">
+          <h2 class="checkout-section-title">Contact</h2>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="co-email" placeholder="your@email.com" />
+          </div>
+          <h2 class="checkout-section-title" style="margin-top:2rem">Shipping</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="co-fname" placeholder="First name" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="co-lname" placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="co-addr" placeholder="Street address" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" id="co-city" placeholder="City" />
+            </div>
+            <div class="form-group">
+              <label>ZIP</label>
+              <input type="text" id="co-zip" placeholder="ZIP code" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <select id="co-country">
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>Australia</option>
+              <option>Germany</option>
+              <option>France</option>
+            </select>
+          </div>
+
+          <h2 class="checkout-section-title" style="margin-top:2rem">Payment</h2>
+          <div class="stripe-notice">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span>Payments securely processed by <strong>Stripe</strong></span>
+          </div>
+          <div class="stripe-fields">
+            <div class="form-group">
+              <label>Card Number</label>
+              <div class="stripe-input" id="stripe-card-number">
+                <input type="text" placeholder="4242 4242 4242 4242" maxlength="19" oninput="formatCard(this)" />
+                <div class="card-icons">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/32px-Mastercard-logo.svg.png" alt="Mastercard" width="24" />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry</label>
+                <input type="text" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)" />
+              </div>
+              <div class="form-group">
+                <label>CVC</label>
+                <input type="text" placeholder="•••" maxlength="4" />
+              </div>
+            </div>
+          </div>
+          <button class="btn-dark full" onclick="placeOrder()" id="placeOrderBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Place Order
+          </button>
+          <p class="checkout-disclaimer">
+            By placing your order you agree to our Terms of Service and Privacy Policy. Your payment is encrypted and secure.
+          </p>
+        </div>
+        <div class="checkout-summary-col" id="checkoutSummary"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- PAGE: SUCCESS         -->
+  <!-- ===================== -->
+  <div class="page" id="page-success">
+    <div class="success-page">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 class="success-title">Order Confirmed</h1>
+      <p class="success-sub">Thank you for your purchase. A confirmation has been sent to your email.</p>
+      <div class="success-order" id="successOrder"></div>
+      <button class="btn-dark" onclick="startOver()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

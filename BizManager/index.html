@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizManager — Booking & Inventory</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">B</div>
+      <div>
+        <div class="logo-text">BizManager</div>
+        <div class="logo-sub">v2.4.1</div>
+      </div>
+    </div>
+    <div class="nav-section">Main</div>
+    <div class="nav-item active" onclick="showView('dashboard',this)">
+      <i class="ti ti-layout-dashboard"></i> Dashboard
+    </div>
+    <div class="nav-item" onclick="showView('bookings',this)">
+      <i class="ti ti-calendar"></i> Bookings
+      <span class="nav-badge" id="bcount">0</span>
+    </div>
+    <div class="nav-item" onclick="showView('inventory',this)">
+      <i class="ti ti-box"></i> Inventory
+    </div>
+    <div class="nav-section">System</div>
+    <div class="nav-item" onclick="showView('clients',this)">
+      <i class="ti ti-users"></i> Clients
+    </div>
+    <div class="sidebar-footer">
+      <div class="avatar">BH</div>
+      <div class="user-info">
+        <div class="user-name">Brady Huckins</div>
+        <div class="user-role">Administrator</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div>
+          <div class="page-title" id="pageTitle">Dashboard</div>
+          <div class="page-sub" id="pageSub">Overview &amp; quick stats</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-wrap">
+          <i class="ti ti-search"></i>
+          <input type="text" placeholder="Search..." id="globalSearch" oninput="handleSearch()" />
+        </div>
+        <button class="btn btn-primary" onclick="openAddModal()" id="addBtn">
+          <i class="ti ti-plus"></i> Add New
+        </button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- DASHBOARD VIEW -->
+      <div class="view active" id="view-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label"><i class="ti ti-calendar"></i> Total Bookings</div>
+            <div class="stat-val" id="stat-bookings">0</div>
+            <div class="stat-change">&#8593; 12% this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><i class="ti ti-box"></i> Inventory Items</div>
+            <div class="stat-val" id="stat-inventory">0</div>
+            <div class="stat-change">&#8593; 3 added today</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><i class="ti ti-users"></i> Clients</div>
+            <div class="stat-val" id="stat-clients">0</div>
+            <div class="stat-change">&#8593; 2 new this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><i class="ti ti-currency-dollar"></i> Revenue (MTD)</div>
+            <div class="stat-val" id="stat-revenue">$0</div>
+            <div class="stat-change">&#8593; 8% vs last month</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <div class="table-header">
+            <div class="table-title">Recent Bookings</div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th><th>Service</th><th>Date</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="dash-recent"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BOOKINGS VIEW -->
+      <div class="view" id="view-bookings">
+        <div class="cal-grid">
+          <div>
+            <div class="cal-wrap">
+              <div class="cal-nav">
+                <button class="icon-btn" onclick="changeMonth(-1)" aria-label="Previous month">
+                  <i class="ti ti-chevron-left"></i>
+                </button>
+                <div class="cal-month" id="calMonthLabel"></div>
+                <button class="icon-btn" onclick="changeMonth(1)" aria-label="Next month">
+                  <i class="ti ti-chevron-right"></i>
+                </button>
+              </div>
+              <div class="cal-days-header" id="calDayNames"></div>
+              <div class="cal-days" id="calDays"></div>
+            </div>
+          </div>
+          <div class="day-panel">
+            <div class="day-panel-head" id="dayPanelTitle">Select a day</div>
+            <div class="appt-list" id="dayAppts"></div>
+          </div>
+        </div>
+        <div style="height:20px"></div>
+        <div class="table-wrap">
+          <div class="table-header">
+            <div class="table-title">All Bookings</div>
+            <div class="filters">
+              <select class="filter-select" onchange="filterBookings()" id="bookingFilter">
+                <option value="">All Status</option>
+                <option>Confirmed</option>
+                <option>Pending</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th><th>Service</th><th>Date &amp; Time</th>
+                <th>Status</th><th>Notes</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- INVENTORY VIEW -->
+      <div class="view" id="view-inventory">
+        <div class="inv-filters" id="catFilters"></div>
+        <div class="inv-grid" id="invGrid"></div>
+      </div>
+
+      <!-- CLIENTS VIEW -->
+      <div class="view" id="view-clients">
+        <div class="table-wrap">
+          <div class="table-header">
+            <div class="table-title">Client Directory</div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th><th>Email</th><th>Phone</th><th>Bookings</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="clients-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ADD / EDIT MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="modalTitle">Add Booking</div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveRecord()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DELETE -->
+<div class="modal-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon"><i class="ti ti-trash"></i></div>
+    <div class="confirm-title">Delete Record</div>
+    <div class="confirm-msg" id="confirmMsg">Are you sure? This cannot be undone.</div>
+    <div class="confirm-actions">
+      <button class="btn btn-ghost" onclick="closeConfirm()">Cancel</button>
+      <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="ti ti-check"></i>
+  <span id="toastMsg"></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
